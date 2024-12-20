@@ -14,7 +14,9 @@ const PORT = 3005;
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/otp", otproutes);
-
+app.get("/", (req, res) => {
+  res.json({ message: "Hello World" });
+});
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, {
